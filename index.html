@@ -1,0 +1,866 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fbfaff">
+<meta name="description" content="Ahmed Ali Raza — developer, WordPress creator and SEO learner.">
+<title>Ahmed Ali Raza — Full Stack Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--p:#8b5cf6;--v:#a855f7;--pink:#ec4899;--c:#06b6d4;--b:#3b82f6;--t:#2dd4bf;--ink:#24183d;--muted:#766d89;--paper:#fbfaff;--grad:linear-gradient(115deg,var(--p),var(--pink) 48%,var(--c));--line:#e9e0fa;--shadow:0 20px 60px #7048a51c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:radial-gradient(ellipse at 10% 5%,#d9c6ff55,transparent 32%),radial-gradient(ellipse at 92% 25%,#a5f3fc55,transparent 30%),var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1150px,calc(100% - 40px));margin:auto}
+.section{padding:100px 0}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #8b5cf629;background:#8b5cf610;border-radius:30px;padding:8px 13px;color:#7950ce;font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.eyebrow:before{content:"";width:7px;height:7px;background:var(--pink);border-radius:50%;box-shadow:0 0 12px var(--pink)}
+h1,h2,h3,.brand-name{font-family:"Space Grotesk",sans-serif}
+h2{font-size:clamp(2.2rem,5vw,3.7rem);line-height:1.08;letter-spacing:-.055em;margin:18px 0}
+.gradient{background:var(--grad);background-size:220% 220%;color:transparent;background-clip:text;-webkit-background-clip:text;animation:flow 8s ease infinite}
+.intro{max-width:640px;color:var(--muted);line-height:1.8}
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:15px;padding:14px 19px;font-weight:800;transition:.25s}
+.btn:before{content:"";position:absolute;inset:0;background:var(--grad);z-index:-2}
+.btn:after{content:"";position:absolute;top:-60%;left:-60%;width:35%;height:220%;background:#ffffff90;filter:blur(6px);transform:rotate(25deg);transition:left .55s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 14px 30px #8b5cf64d}
+.btn:hover:after{left:140%}
+.btn:active{transform:scale(.98)}
+.primary{color:white}
+.soft{background:white;color:#7048c6;border:1px solid #8b5cf62b;box-shadow:0 8px 22px #8b5cf612}
+.soft:before{opacity:.09}
+.icon{width:43px;height:43px;display:grid;place-items:center;border-radius:14px;background:#ffffffd9;border:1px solid var(--line);color:#7950ce;transition:.25s}
+.icon:hover{background:var(--grad);color:white;transform:translateY(-4px) rotate(-5deg);box-shadow:0 8px 24px #8b5cf644}
+.topbar{position:fixed;z-index:99;top:0;left:0;right:0;padding:10px 0;transition:.25s}
+.topbar.scrolled{background:#fbfaffd9;backdrop-filter:blur(18px);box-shadow:0 5px 25px #49306b12;border-bottom:1px solid #8b5cf618}
+.nav{height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;min-width:max-content}
+.mark{width:43px;height:43px;display:grid;place-items:center;border-radius:15px;background:var(--grad);color:white;font-weight:800;box-shadow:0 7px 20px #8b5cf64d}
+.brand-name{font-weight:700;letter-spacing:-.04em}
+.brand-sub{display:block;font-size:.7rem;color:var(--muted);margin-top:2px}
+.links{display:flex;gap:3px;align-items:center}
+.links a{padding:10px 9px;border-radius:10px;font-size:.82rem;font-weight:800;color:var(--muted);transition:.2s}
+.links a:hover,.links a.active{background:#8b5cf610;color:#7746d2}
+.navcta{padding:11px 14px;font-size:.82rem}
+.menubtn{display:none;border:1px solid var(--line);background:white;color:#7950ce;border-radius:13px;width:43px;height:43px}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:135px 0 70px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:45px}
+.hello{color:#7950ce;font-weight:800;margin-bottom:16px}
+.hello span{display:inline-block;animation:wave 2.5s infinite}
+.hero h1{font-size:clamp(3.3rem,7vw,6.3rem);line-height:.97;letter-spacing:-.08em;margin:0 0 16px}
+.role{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;letter-spacing:-.04em;margin:0 0 20px}
+.hero p.desc{font-size:1.05rem;line-height:1.85;color:var(--muted);max-width:570px}
+.actions,.socials{display:flex;gap:12px;flex-wrap:wrap}
+.socials{align-items:center;margin-top:26px}
+.socials small{font-weight:800;color:var(--muted);margin-right:3px}
+.visual{position:relative;min-height:500px;display:grid;place-items:center}
+.halo{position:absolute;width:95%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#a855f72b,#ec48991b 42%,#06b6d414 65%,transparent 72%);animation:breathe 6s infinite}
+.ring{position:absolute;width:370px;max-width:85%;aspect-ratio:1;border:1px dashed #8b5cf65c;border-radius:50%;animation:spin 38s linear infinite}
+.ring:before,.ring:after{content:"";position:absolute;width:12px;height:12px;background:var(--pink);border-radius:50%;box-shadow:0 0 20px var(--pink)}
+.ring:before{top:12%;left:16%}
+.ring:after{right:6%;bottom:22%;background:var(--c);box-shadow:0 0 20px var(--c)}
+.photo{z-index:2;width:min(325px,75%);aspect-ratio:.8;padding:5px;border-radius:43% 43% 28px 28px;background:var(--grad);background-size:220%;animation:flow 8s infinite;box-shadow:0 25px 70px #8b5cf645,0 0 0 12px #ffffffa8,0 0 0 14px #8b5cf620;transform:rotate(2deg);overflow:hidden}
+.photo-inner{height:100%;width:100%;border-radius:inherit;overflow:hidden;background:linear-gradient(145deg,#f3e8ff,#cffafe,#fce7f3)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.placeholder{height:100%;display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px;color:#6b46b6}
+.placeholder i{font-size:3rem;margin-bottom:18px}
+.placeholder strong{font:700 1.2rem "Space Grotesk"}
+.placeholder small{line-height:1.6;margin-top:8px}
+.chip{position:absolute;z-index:3;display:flex;align-items:center;gap:8px;padding:12px 15px;border:1px solid white;border-radius:16px;background:#ffffffc9;backdrop-filter:blur(12px);box-shadow:0 12px 30px #49306b20;font-size:.82rem;font-weight:800;animation:float 5s ease-in-out infinite}
+.chip i{font-size:1.3rem}
+.html{top:13%;left:0;color:#e85b36}
+.css{top:29%;right:0;color:#3478d4;animation-delay:-1s}
+.js{bottom:23%;left:-2%;color:#b08a00;animation-delay:-2s}
+.wp{bottom:11%;right:2%;color:#247ba5;animation-delay:-.6s}
+.strip{padding:23px 0;background:linear-gradient(90deg,#f3e8ffb0,#ffffffb8,#cffafe70);border-block:1px solid #8b5cf61c}
+.strip-inner{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.strip small{color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+.tech{font-weight:800;color:#796d91}
+.tech i{color:#8b5cf6;margin-right:6px}
+
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:55px}
+.about-art{position:relative;min-height:350px;display:grid;place-items:center}
+.blob{width:min(320px,90%);aspect-ratio:1;border-radius:38% 62% 58% 42%/42% 40% 60% 58%;background:linear-gradient(135deg,#8b5cf6,#ec4899 50%,#06b6d4);box-shadow:0 25px 60px #8b5cf638;animation:morph 10s infinite}
+.sticker{position:absolute;top:8%;right:0;background:white;padding:22px;border-radius:25px;box-shadow:var(--shadow);text-align:center;color:#7950ce;transform:rotate(7deg)}
+.sticker i{font-size:1.7rem}
+.sticker span{display:block;font-size:.7rem;font-weight:800;margin-top:8px}
+.note{position:absolute;bottom:7%;left:0;padding:17px 19px;background:#ffffffed;border:1px solid white;border-radius:16px;box-shadow:var(--shadow);font-weight:800}
+.note i{color:var(--pink);margin-right:8px}
+.about-copy p{color:var(--muted);line-height:1.9}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+.stat{padding:17px 12px;border-radius:17px;background:linear-gradient(145deg,#fff,#f3e8ffb8);border:1px solid #8b5cf618}
+.stat strong{display:block;font:700 1.25rem "Space Grotesk";color:#8751db}
+.stat span{font-size:.75rem;color:var(--muted);font-weight:700}
+
+.skills{background:linear-gradient(145deg,#f3e8ffad,#ffffffc9 48%,#cffafe77);border-block:1px solid #8b5cf618}
+.head{margin-bottom:38px}
+.skillgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.skill{position:relative;overflow:hidden;padding:22px 19px;border-radius:22px;background:#ffffffd9;border:1px solid white;box-shadow:0 12px 32px #49306b0d;transition:.3s}
+.skill:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+.skill:hover{transform:translateY(-7px);box-shadow:0 23px 42px #49306b20}
+.skill-icon{width:49px;height:49px;display:grid;place-items:center;border-radius:16px;background:var(--bg,#f3e8ff);color:var(--color,#8b5cf6);font-size:1.5rem;margin-bottom:16px}
+.skill h3{font-size:1.02rem;margin:0 0 7px}
+.skill p,.service p{font-size:.85rem;color:var(--muted);line-height:1.7;margin:0}
+.servicesgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.service{position:relative;overflow:hidden;padding:27px 24px;border-radius:24px;background:#ffffffd9;border:1px solid #8b5cf61e;box-shadow:0 13px 36px #49306b0d;transition:.3s}
+.service:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#a855f710,#ec48990b,#06b6d40b);opacity:0;transition:.3s}
+.service:hover{transform:translateY(-7px);box-shadow:0 23px 48px #49306b1a}
+.service:hover:after{opacity:1}
+.service>*{position:relative;z-index:1}
+.service-icon{width:56px;height:56px;display:grid;place-items:center;border-radius:18px;background:var(--grad);color:white;font-size:1.4rem;box-shadow:0 9px 22px #8b5cf638;margin-bottom:20px}
+.service h3{font-size:1.18rem;margin-bottom:10px}
+
+.project-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 24px}
+.filter{border:1px solid #8b5cf626;background:white;color:var(--muted);border-radius:30px;padding:9px 14px;font-size:.8rem;font-weight:800;transition:.2s}
+.filter.active,.filter:hover{background:var(--grad);color:white;border-color:transparent;box-shadow:0 7px 18px #8b5cf633}
+.projectgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{overflow:hidden;border-radius:24px;background:#ffffffdf;border:1px solid #8b5cf61f;box-shadow:0 13px 38px #49306b10;transition:transform .25s,box-shadow .25s;transform-style:preserve-3d}
+.project:hover{box-shadow:0 25px 55px #49306b24;border-color:#a855f74a}
+.project[hidden]{display:none}
+.art{height:175px;display:grid;place-items:center;position:relative;overflow:hidden;background:var(--art,linear-gradient(135deg,#8b5cf6,#ec4899,#06b6d4))}
+.art:before,.art:after{content:"";position:absolute;border:1px solid #ffffff80;border-radius:50%}
+.art:before{width:200px;height:200px;right:-30px;top:-95px}
+.art:after{width:120px;height:120px;left:-30px;bottom:-65px}
+.art i{font-size:3.4rem;color:white;text-shadow:0 8px 25px #24183d40;transition:.3s}
+.project:hover .art i{transform:scale(1.15) rotate(-7deg)}
+.label{position:absolute;top:13px;left:13px;background:#ffffffc9;border-radius:20px;padding:6px 10px;font-size:.69rem;font-weight:900;color:#6944b5}
+.project-content{padding:21px}
+.project-content h3{font-size:1.15rem;margin:0 0 9px}
+.project-content p{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.69rem;font-weight:800;color:#7954c4;padding:6px 9px;border-radius:8px;background:#8b5cf610}
+.project-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #8b5cf618;padding-top:14px;margin-top:16px;font-size:.78rem;color:#7950ce;font-weight:800}
+.project-foot small{color:#9b90ac}
+
+.education{background:linear-gradient(135deg,#f3e8ffab,#ffffffc9,#cffafe70)}
+.timeline{max-width:800px;margin:auto;position:relative}
+.timeline:before{content:"";position:absolute;left:23px;top:10px;bottom:15px;width:2px;background:linear-gradient(var(--p),var(--pink),var(--c))}
+.edu{position:relative;padding:0 0 25px 65px}
+.dot{position:absolute;left:12px;top:8px;width:24px;height:24px;border:6px solid var(--v);border-radius:50%;background:white;box-shadow:0 0 0 6px #a855f71c}
+.edu-card{padding:24px;border-radius:22px;background:#ffffffdf;border:1px solid #8b5cf61e;box-shadow:0 12px 30px #49306b0d}
+.edu-meta{font-size:.8rem;color:#8051d1;font-weight:800;margin-bottom:10px}
+.edu h3{font-size:1.18rem;margin:0 0 8px}
+.edu p{color:var(--muted);line-height:1.75;margin:0}
+
+.contactbox{position:relative;overflow:hidden;padding:clamp(28px,5vw,55px);border-radius:32px;background:linear-gradient(120deg,#7c3aed,#c026d3 48%,#0891b2);color:white;box-shadow:0 28px 75px #7942cb45}
+.contactbox:before{content:"";position:absolute;right:-100px;top:-200px;width:360px;height:360px;border:1px solid #ffffff42;border-radius:50%;box-shadow:0 0 0 25px #ffffff09,0 0 0 55px #ffffff08}
+.contactgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center;position:relative}
+.contactbox .eyebrow{color:white;background:#ffffff19;border-color:#ffffff42}
+.contactbox h2{font-size:clamp(2.2rem,4.3vw,3.5rem)}
+.contactbox p{color:#ffffffd9;line-height:1.8}
+.contactactions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.contactbox .primary{background:white;color:#7944cb}
+.contactbox .primary:before{background:white}
+.contactbox .primary:after{background:#8b5cf626}
+.contactbox .soft{background:#ffffff19;color:white;border-color:#ffffff60}
+.contactbox .soft:before{opacity:0}
+.contact-details{display:grid;gap:11px}
+.contact-item{display:flex;align-items:center;gap:13px;padding:15px;border:1px solid #ffffff42;border-radius:16px;background:#ffffff16;backdrop-filter:blur(10px);min-width:0}
+.contact-item i{width:25px;text-align:center;font-size:1.1rem}
+.contact-item small{display:block;font-size:.7rem;color:#ffffffb8;margin-bottom:4px}
+.contact-item strong{font-size:.86rem;overflow-wrap:anywhere}
+
+.footer{padding:30px 0}
+.footinner{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.footinner p{margin:0;color:var(--muted);font-size:.8rem}
+.footicons{display:flex;gap:7px}
+.backtop{position:fixed;right:20px;bottom:20px;width:45px;height:45px;border:0;border-radius:15px;background:var(--grad);color:white;box-shadow:0 8px 22px #8b5cf64a;opacity:0;pointer-events:none;transform:translateY(10px);transition:.25s;z-index:60}
+.backtop.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s cubic-bezier(.2,.75,.25,1)}
+.reveal.visible{opacity:1;transform:none}
+
+@keyframes flow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes breathe{0%,100%{transform:scale(.96)}50%{transform:scale(1.06)}}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}15%,35%{transform:rotate(13deg)}25%{transform:rotate(-8deg)}}
+@keyframes morph{50%{border-radius:58% 42% 40% 60%/54% 62% 38% 46%}}
+
+@media(max-width:1000px){
+.links a{padding:9px 6px;font-size:.75rem}
+.skillgrid{grid-template-columns:repeat(3,1fr)}
+.projectgrid{grid-template-columns:repeat(2,1fr)}
+.hero-grid{gap:20px}
+}
+
+@media(max-width:760px){
+.wrap{width:calc(100% - 32px)}
+.section{padding:76px 0}
+.nav{height:54px}
+.menubtn{display:grid;place-items:center}
+.navcta{display:none}
+.links{position:absolute;top:calc(100% + 7px);left:16px;right:16px;display:flex;flex-direction:column;align-items:stretch;background:#ffffffed;backdrop-filter:blur(20px);padding:12px;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s}
+.links.open{opacity:1;visibility:visible;transform:none}
+.links a{font-size:.92rem;padding:12px}
+.hero{padding:120px 0 50px;min-height:auto}
+.hero-grid{grid-template-columns:1fr;gap:5px}
+.hero-copy{text-align:center}
+.hero h1{font-size:clamp(3.2rem,13vw,5rem)}
+.hero p.desc{margin-left:auto;margin-right:auto}
+.actions,.socials{justify-content:center}
+.hero .actions .btn{min-width:155px}
+.visual{min-height:420px}
+.photo{width:255px}
+.ring{width:315px}
+.html{left:1%}
+.css{right:0}
+.js{left:0}
+.wp{right:0}
+.strip-inner{justify-content:center}
+.strip small{width:100%;text-align:center}
+.about-grid{grid-template-columns:1fr;gap:25px}
+.about-art{min-height:300px;order:2}
+.about-copy{order:1}
+.skillgrid{grid-template-columns:repeat(2,1fr);gap:11px}
+.skill{padding:18px 14px}
+.servicesgrid{grid-template-columns:repeat(2,1fr);gap:12px}
+.service{padding:21px 17px}
+.projectgrid{gap:12px}
+.project-content{padding:17px}
+.contactgrid{grid-template-columns:1fr}
+.footinner{justify-content:center;text-align:center}
+.footinner .brand{margin:auto}
+}
+
+@media(max-width:430px){
+.brand-name{font-size:.88rem}
+.brand-sub{font-size:.65rem}
+.mark{width:39px;height:39px}
+.hero h1{font-size:3.05rem}
+.role{font-size:1.4rem}
+.hero .actions .btn{width:100%}
+.visual{min-height:365px}
+.photo{width:220px}
+.ring{width:270px}
+.chip{font-size:.7rem;padding:9px 11px}
+.chip i{font-size:1rem}
+.skillgrid,.servicesgrid,.projectgrid{grid-template-columns:1fr}
+.skill{padding:20px}
+.projectgrid{gap:16px}
+.art{height:175px}
+.stats{grid-template-columns:1fr}
+.contactactions .btn{width:100%}
+.socials small{display:none}
+.edu{padding-left:52px}
+.timeline:before{left:19px}
+.dot{left:8px}
+.edu-card{padding:20px}
+}
+
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+.reveal{opacity:1;transform:none}
+}
+
+/* About section profile photo */
+.about-art {
+  position: relative;
+  min-height: 390px;
+  display: grid;
+  place-items: center;
+}
+
+.about-photo-frame {
+  position: relative;
+  width: min(310px, 82%);
+  height: 350px;
+  padding: 5px;
+  border-radius: 48% 48% 25px 25px;
+  background: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #ec4899,
+    #06b6d4
+  );
+  box-shadow: 0 22px 55px #8b5cf638;
+  transform: rotate(-3deg);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.about-photo-frame:hover {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 0 28px 65px #8b5cf645;
+}
+
+.about-photo-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: inherit;
+  background: #f3e8ff;
+}
+
+.about-art .sticker {
+  z-index: 2;
+  top: 5%;
+  right: 0;
+}
+
+.about-art .note {
+  z-index: 2;
+  bottom: 5%;
+  left: 0;
+}
+
+@media (max-width: 760px) {
+  .about-art {
+    min-height: 350px;
+  }
+
+  .about-photo-frame {
+    width: 255px;
+    max-width: 80%;
+    height: 300px;
+  }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 78px;
+  z-index: 1000;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff;
+  font-size: 27px;
+  text-decoration: none;
+
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: whatsappPulse 2.5s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+  color: #fff;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 60px;
+  white-space: nowrap;
+
+  padding: 9px 13px;
+  border-radius: 10px;
+
+  background: #fff;
+  color: #245344;
+  border: 1px solid #d9f5e5;
+  box-shadow: 0 5px 20px #00000012;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(8px);
+  transition: 0.25s ease;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+@keyframes whatsappPulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.30);
+  }
+  50% {
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+  }
+}
+
+@media (max-width: 430px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 76px;
+    width: 47px;
+    height: 47px;
+    font-size: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float {
+    animation: none;
+  }
+}
+
+/* Navbar Profile Logo */
+.brand-logo {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 18px rgba(139, 92, 246, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.07);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+}
+</style>
+
+</head>
+
+<body>
+<header class="topbar" id="topbar">
+<div class="wrap nav">
+<a class="brand" href="#home">
+<img class="brand-logo" src="ahmed.jpg.jpeg" alt="Ahmed Ali Raza logo">
+<span>
+<span class="brand-name">Ahmed Ali Raza</span>
+<span class="brand-sub">Full Stack Developer</span>
+</span>
+</a>
+
+<nav class="links" id="links" aria-label="Main navigation">
+<a class="active" href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<a class="btn primary navcta" href="#contact">
+Let's Talk <i class="fa-solid fa-arrow-up-right-from-square"></i>
+</a>
+
+<button class="menubtn" id="menu" aria-label="Open menu" aria-expanded="false">
+<i class="fa-solid fa-bars"></i>
+</button>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="wrap hero-grid">
+<div class="hero-copy reveal">
+<p class="hello"><span>👋</span> Hello, I'm</p>
+<h1>Ahmed Ali<br><span class="gradient">Raza.</span></h1>
+<p class="role"><span class="gradient">Full Stack Developer</span></p>
+<p class="desc">I build engaging websites and digital experiences with a focus on thoughtful design, WordPress development, frontend skills, and SEO-friendly content.</p>
+
+<div class="actions">
+<a class="btn primary" href="#projects">Explore My Work <i class="fa-solid fa-arrow-down"></i></a>
+<a class="btn soft" href="#contact"><i class="fa-regular fa-paper-plane"></i> Let's Connect</a>
+</div>
+
+<div class="socials">
+<small>Find me here</small>
+<a class="icon" href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub placeholder"><i class="fa-brands fa-github"></i></a>
+<a class="icon" href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn placeholder"><i class="fa-brands fa-linkedin-in"></i></a>
+<a class="icon" href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Instagram placeholder"><i class="fa-brands fa-instagram"></i></a>
+</div>
+</div>
+
+<div class="visual reveal">
+<div class="halo"></div>
+<div class="ring"></div>
+<div class="photo">
+<div class="photo-inner">
+<img id="profilePhoto" src="ahmed.jpg.jpeg" alt="Ahmed Ali Raza profile photo" onerror="this.style.display='none';document.getElementById('photoPlaceholder').style.display='flex'">
+<div class="placeholder" id="photoPlaceholder">
+<i class="fa-regular fa-image"></i>
+<strong>Add your real photo</strong>
+<small>Save your photo as <b>ahmed.jpg</b> next to index.html.</small>
+</div>
+</div>
+</div>
+<div class="chip html"><i class="fa-brands fa-html5"></i> HTML5</div>
+<div class="chip css"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+<div class="chip js"><i class="fa-brands fa-js"></i> JavaScript</div>
+<div class="chip wp"><i class="fa-brands fa-wordpress"></i> WordPress</div>
+</div>
+</div>
+</section>
+
+<div class="strip">
+<div class="wrap strip-inner">
+<small>Tools I work with</small>
+<span class="tech"><i class="fa-brands fa-html5"></i>HTML</span>
+<span class="tech"><i class="fa-brands fa-css3-alt"></i>CSS</span>
+<span class="tech"><i class="fa-brands fa-js"></i>JavaScript</span>
+<span class="tech"><i class="fa-brands fa-wordpress"></i>WordPress</span>
+<span class="tech"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO</span>
+</div>
+</div>
+
+<section class="section" id="about">
+<div class="wrap about-grid">
+
+<div class="about-art reveal">
+  <div class="about-photo-frame">
+    <img src="awan.jpg.jpeg" alt="Ahmed Ali Raza">
+  </div>
+
+  <div class="sticker">
+    <i class="fa-solid fa-code"></i>
+    <span>Web Developer</span>
+  </div>
+
+  <div class="note">
+    <i class="fa-solid fa-heart"></i>
+    Curious mind. Creative builds.
+  </div>
+</div>
+
+
+<div class="about-copy reveal">
+<span class="eyebrow">A little about me</span>
+<h2>Building for the web,<br><span class="gradient">one idea at a time.</span></h2>
+<p>I'm Ahmed Ali Raza, an IT diploma student and aspiring full stack developer from Jhelum, Pakistan. I enjoy turning ideas into useful, attractive websites and learning how great digital products are built.</p>
+<p>My current focus includes HTML, CSS, JavaScript learning, WordPress website creation, on-page SEO, and content writing. I'm continually improving my skills through practice and projects.</p>
+
+<div class="stats">
+<div class="stat"><strong>Web</strong><span>Development</span></div>
+<div class="stat"><strong>WP</strong><span>WordPress Sites</span></div>
+<div class="stat"><strong>SEO</strong><span>Content & Search</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section skills" id="skills">
+<div class="wrap">
+<div class="head reveal">
+<span class="eyebrow">My toolkit</span>
+<h2>Skills that bring<br><span class="gradient">ideas to life.</span></h2>
+<p class="intro">A growing toolkit for building accessible websites, creating useful content, and helping websites become easier to discover.</p>
+</div>
+
+<div class="skillgrid">
+<article class="skill reveal">
+<div class="skill-icon" style="--color:#e85b36;--bg:#fff0e8"><i class="fa-brands fa-html5"></i></div>
+<h3>HTML5</h3><p>Semantic structure and clean page foundations.</p>
+</article>
+<article class="skill reveal">
+<div class="skill-icon" style="--color:#3478d4;--bg:#eaf2ff"><i class="fa-brands fa-css3-alt"></i></div>
+<h3>CSS3</h3><p>Responsive layouts, styling, and visual polish.</p>
+</article>
+<article class="skill reveal">
+<div class="skill-icon" style="--color:#a88400;--bg:#fff8d9"><i class="fa-brands fa-js"></i></div>
+<h3>JavaScript</h3><p>Building core programming skills and interactivity.</p>
+</article>
+<article class="skill reveal">
+<div class="skill-icon" style="--color:#247ba5;--bg:#dffaff"><i class="fa-brands fa-wordpress"></i></div>
+<h3>WordPress</h3><p>Websites using themes, plugins, and page builders.</p>
+</article>
+<article class="skill reveal">
+<div class="skill-icon" style="--color:#4f46e5;--bg:#e8e9ff"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+<h3>WordPress SEO</h3><p>On-page SEO fundamentals and website optimization.</p>
+</article>
+<article class="skill reveal">
+<div class="skill-icon" style="--color:#db2777;--bg:#ffe8f4"><i class="fa-solid fa-pen-nib"></i></div>
+<h3>Content Writing</h3><p>Clear, reader-focused content for websites and blogs.</p>
+</article>
+<article class="skill reveal">
+<div class="skill-icon" style="--color:#0d9488;--bg:#d9fff7"><i class="fa-solid fa-mobile-screen-button"></i></div>
+<h3>Responsive Design</h3><p>Layouts that adapt to mobile and desktop screens.</p>
+</article>
+<article class="skill reveal">
+<div class="skill-icon" style="--color:#7c3aed;--bg:#f3e8ff"><i class="fa-solid fa-layer-group"></i></div>
+<h3>React</h3><p>A technology I'm interested in developing further.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section" id="services">
+<div class="wrap">
+<div class="head reveal">
+<span class="eyebrow">How I can help</span>
+<h2>Useful services,<br><span class="gradient">thoughtfully delivered.</span></h2>
+<p class="intro">Practical website and content support for people and small businesses who want a stronger online presence.</p>
+</div>
+
+<div class="servicesgrid">
+<article class="service reveal">
+<div class="service-icon"><i class="fa-solid fa-code"></i></div>
+<h3>Frontend Development</h3>
+<p>Clean page structure, responsive styling, and user-friendly interfaces with core web technologies.</p>
+</article>
+<article class="service reveal">
+<div class="service-icon" style="background:linear-gradient(135deg,#ec4899,#a855f7)"><i class="fa-brands fa-wordpress"></i></div>
+<h3>WordPress Websites</h3>
+<p>Business, portfolio, and blog websites built with themes, plugins, and visual page builders.</p>
+</article>
+<article class="service reveal">
+<div class="service-icon" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)"><i class="fa-solid fa-chart-line"></i></div>
+<h3>SEO Fundamentals</h3>
+<p>WordPress SEO setup, on-page improvements, and content structure supporting search visibility.</p>
+</article>
+<article class="service reveal">
+<div class="service-icon" style="background:linear-gradient(135deg,#f97316,#ec4899)"><i class="fa-solid fa-pen-to-square"></i></div>
+<h3>Content Writing</h3>
+<p>Readable website and blog content created with the audience and page purpose in mind.</p>
+</article>
+<article class="service reveal">
+<div class="service-icon" style="background:linear-gradient(135deg,#14b8a6,#06b6d4)"><i class="fa-solid fa-gauge-high"></i></div>
+<h3>Website Improvements</h3>
+<p>Help with layout refinements, content updates, and overall browsing experience.</p>
+</article>
+<article class="service reveal">
+<div class="service-icon" style="background:linear-gradient(135deg,#6366f1,#ec4899)"><i class="fa-solid fa-lightbulb"></i></div>
+<h3>Creative Web Ideas</h3>
+<p>Planning support for personal portfolios, blogs, and useful web project concepts.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section" id="projects">
+<div class="wrap">
+<div class="project-head reveal">
+<div>
+<span class="eyebrow">Selected work & concepts</span>
+<h2>Things I'm building<br><span class="gradient">and exploring.</span></h2>
+<p class="intro">A transparent snapshot of portfolio work and project concepts. Add live links as projects are published.</p>
+</div>
+</div>
+
+<div class="filters reveal" role="group" aria-label="Filter projects">
+<button class="filter active" data-filter="all">All work</button>
+<button class="filter" data-filter="web">Web</button>
+<button class="filter" data-filter="wordpress">WordPress</button>
+<button class="filter" data-filter="concept">Concepts</button>
+</div>
+
+<div class="projectgrid">
+<article class="project reveal" data-category="web">
+<div class="art"><span class="label">Portfolio</span><i class="fa-solid fa-laptop-code"></i></div>
+<div class="project-content">
+<h3>Personal Portfolio</h3>
+<p>A personal developer portfolio concept focused on colorful design, responsive layout, and interactive UI.</p>
+<div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+<div class="project-foot"><small>Personal project</small><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+</div>
+</article>
+
+<article class="project reveal" data-category="concept">
+<div class="art" style="--art:linear-gradient(135deg,#0f766e,#2dd4bf 50%,#3b82f6)">
+<span class="label">Diploma project concept</span><i class="fa-solid fa-store"></i>
+</div>
+<div class="project-content">
+<h3>DukaanOS</h3>
+<p>A shop-management web app concept exploring inventory, repair tracking, cash closing, and profit summaries.</p>
+<div class="tags"><span class="tag">Web App</span><span class="tag">UI/UX</span><span class="tag">Database</span></div>
+<div class="project-foot"><small>In planning</small><i class="fa-solid fa-lightbulb"></i></div>
+</div>
+</article>
+
+<article class="project reveal" data-category="wordpress">
+<div class="art" style="--art:linear-gradient(135deg,#2563eb,#8b5cf6 55%,#f472b6)">
+<span class="label">Website concept</span><i class="fa-brands fa-wordpress"></i>
+</div>
+<div class="project-content">
+<h3>AiStudyGuide</h3>
+<p>A student-focused blog concept about AI tools for learning, study workflows, and educational resources.</p>
+<div class="tags"><span class="tag">WordPress</span><span class="tag">SEO</span><span class="tag">Content</span></div>
+<div class="project-foot"><small>Website project</small><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section education" id="education">
+<div class="wrap">
+<div class="head reveal">
+<span class="eyebrow">Learning journey</span>
+<h2>Growing through<br><span class="gradient">learning & practice.</span></h2>
+<p class="intro">Building a strong foundation in information technology while developing practical web skills.</p>
+</div>
+
+<div class="timeline">
+<article class="edu reveal">
+<span class="dot"></span>
+<div class="edu-card">
+<div class="edu-meta"><i class="fa-solid fa-graduation-cap"></i> Current education &nbsp; • &nbsp; Expected 2027</div>
+<h3>3-Year Diploma in Information Technology</h3>
+<p>Government College of Technology, Rasul Road, Mandi Bahauddin, Pakistan. Currently completing the final year of the diploma.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="wrap">
+<div class="contactbox reveal">
+<div class="contactgrid">
+<div>
+<span class="eyebrow">Let's make something good</span>
+<h2>Have an idea?<br>Let's bring it <span style="color:#bdf9ff">to life.</span></h2>
+<p>I'm open to discussing website projects, WordPress work, content writing, and opportunities to keep learning and building.</p>
+
+<div class="contactactions">
+<a class="btn primary" href="https://wa.me/923075857370?text=Hi%20Ahmed%20Ali%20Raza%21%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+<a class="btn soft" href="mailto:ahmed.ali.raza.dev@example.com"><i class="fa-regular fa-envelope"></i> Send an Email</a>
+</div>
+</div>
+
+<div class="contact-details">
+<div class="contact-item"><i class="fa-solid fa-location-dot"></i><div><small>Based in</small><strong>Jhelum, Pakistan</strong></div></div>
+<div class="contact-item"><i class="fa-regular fa-envelope"></i><div><small>Email — placeholder, update before publishing</small><strong>ahmed.ali.raza.dev@example.com</strong></div></div>
+<div class="contact-item"><i class="fa-brands fa-whatsapp"></i><div><small>WhatsApp</small><strong>+92 307 5857370</strong></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="wrap footinner">
+<a class="brand" href="#home">
+<img class="brand-logo" src="ahmed.jpg.jpeg" alt="Ahmed Ali Raza logo">
+<span><span class="brand-name">Ahmed Ali Raza</span><span class="brand-sub">Building with curiosity ✦</span></span>
+</a>
+<p>© <span id="year"></span> Ahmed Ali Raza. Designed with color & care.</p>
+<div class="footicons">
+<a class="icon" href="https://github.com/ahmed4978366-byte" aria-label="GitHub placeholder"><i class="fa-brands fa-github"></i></a>
+<a class="icon" href="https://www.linkedin.com/in/ahmed-ali-raza-3884523a8" aria-label="LinkedIn placeholder"><i class="fa-brands fa-linkedin-in"></i></a>
+<a class="icon" href="https://www.instagram.com/malikahmed__8?mdxt=MXg1Mzc4eXFxdTBlYQ==" aria-label="Instagram placeholder"><i class="fa-brands fa-instagram"></i></a>
+</div>
+</div>
+</footer>
+
+
+<button class="backtop" id="backtop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+
+<a
+  class="whatsapp-float"
+  href="https://wa.me/923075857370"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with me on WhatsApp"
+  title="Chat with me on WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="whatsapp-tooltip">Let's chat on WhatsApp!</span>
+</a>
+
+<script>
+(()=>{
+const bar=document.getElementById('topbar');
+const menu=document.getElementById('menu');
+const links=document.getElementById('links');
+const top=document.getElementById('backtop');
+const items=[...document.querySelectorAll('.links a')];
+const sections=[...document.querySelectorAll('main section[id]')];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+menu.addEventListener('click',()=>{
+  let open=links.classList.toggle('open');
+  menu.setAttribute('aria-expanded',String(open));
+  menu.setAttribute('aria-label',open?'Close menu':'Open menu');
+  menu.innerHTML=open
+    ?'<i class="fa-solid fa-xmark"></i>'
+    :'<i class="fa-solid fa-bars"></i>';
+});
+
+items.forEach(a=>a.addEventListener('click',()=>{
+  links.classList.remove('open');
+  menu.setAttribute('aria-expanded','false');
+  menu.innerHTML='<i class="fa-solid fa-bars"></i>';
+}));
+
+function scroll(){
+  bar.classList.toggle('scrolled',scrollY>20);
+  top.classList.toggle('show',scrollY>500);
+
+  let active='home';
+
+  sections.forEach(s=>{
+    if(scrollY>=s.offsetTop-180) active=s.id;
+  });
+
+  items.forEach(a=>
+    a.classList.toggle('active',a.getAttribute('href')==='#'+active)
+  );
+}
+
+addEventListener('scroll',scroll,{passive:true});
+scroll();
+
+top.addEventListener('click',()=>{
+  scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+});
+
+if('IntersectionObserver'in window&&!reduce){
+  let ob=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      ob.unobserve(e.target);
+    }
+  }),{threshold:.12});
+
+  document.querySelectorAll('.reveal').forEach(e=>ob.observe(e));
+}else{
+  document.querySelectorAll('.reveal').forEach(e=>e.classList.add('visible'));
+}
+
+document.querySelectorAll('.filter').forEach(b=>
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+
+    document.querySelectorAll('.project').forEach(p=>{
+      p.hidden=b.dataset.filter!=='all'&&p.dataset.category!==b.dataset.filter;
+    });
+  })
+);
+
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduce){
+  document.querySelectorAll('.project').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      let r=card.getBoundingClientRect();
+      let x=(e.clientX-r.left)/r.width;
+      let y=(e.clientY-r.top)/r.height;
+
+      card.style.transform=
+        `perspective(900px) rotateX(${(.5-y)*4}deg) rotateY(${(x-.5)*5}deg) translateY(-3px)`;
+    });
+
+    card.addEventListener('mouseleave',()=>{
+      card.style.transform='';
+    });
+  });
+}
+})();
+</script>
+</body>
+</html>
